@@ -3,7 +3,7 @@ class PostResource < Avo::BaseResource
   self.includes = []
   self.search_query = -> do
     scope.ransack(id_eq: params[:q], title_cont: params[:q], m: "or").result(distinct: false)
-  end
+    end
 
   field :id, as: :id
   field :title, as: :text
